@@ -19,5 +19,9 @@
   "homepage": "https://github.com/orcunSarmis/Social-Network-API#readme",
   "devDependencies": {
     "package": "^1.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4"
   }
 }
