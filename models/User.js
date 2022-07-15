@@ -19,5 +19,30 @@ const UserSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Thoughts'
         }
-    ]
-})
+    ],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref:'User'
+        }
+    ],
+},
+// This code for schema uses virtuals, monggose model use getter function.
+{
+    toJSON: {
+        virtuals: true,
+        getters: true
+    },
+    // Set id to false, Mongoose returns virtual.
+    id: false
+});
+
+// this lines gets lenght of friends array
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+});
+
+//create the user model using the UserSchema
+const User = model('User', UserSchema);
+
+module.exports = User;
