@@ -30,6 +30,32 @@ const thoughtController = {
         })
     },
 
+    // create a new thought
+    createThought({ body}, res) {
+        Thought.create(body)
+        .then(dbThoughtData => {
+            if(!dbThoughtData) {
+                console.log(err);
+            }
+            return User.findOneAndUpdate(
+                { username: dbThoughtData.userName },
+                {$push: { thoughts: dbThoughtData._id }},
+                { new: true }
+            );
+        })
+        .then(dbThoughtData => {
+            if(!dbThoughtData) {
+                res.status(400).json({ message: 'No user with this id' });
+                return;
+            }
+            res.json(dbThoughtData);
+        })
+        .catch(err => {
+            console.log(err)
+            res.json(err)
+        })
+    },
+
     
 }
 
