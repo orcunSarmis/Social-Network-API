@@ -7,7 +7,7 @@ const {
     updateUser,
     deleteUser,
     addFriend,
-    removeFriend
+    deleteFriend
 } = require('../../controllers/user-controller');
 
 // Set up GET all and POST at /api/users

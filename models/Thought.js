@@ -1,9 +1,8 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
 
-const ReactionSchema = new Schema (
+
+const reactionSchema = new Schema (
     {
          // set custom id to avoid confusion with parent thought _id
          reactionId: {
@@ -31,7 +30,7 @@ const ReactionSchema = new Schema (
     }
 );
 
-const ThoughtSchema  = new Schema(
+const thoughtSchema  = new Schema(
     {
         thoughtText: {
             type: String,
@@ -49,7 +48,7 @@ const ThoughtSchema  = new Schema(
         required: true
     },
     // associate reactions with thoughts & use ReactionSchema to validate data for a reaction
-    reaction: [ReactionSchema]
+    reaction: [reactionSchema]
 },
 {
     toJSON: {
@@ -61,10 +60,10 @@ const ThoughtSchema  = new Schema(
 );
 
 // virtual to return amount of reactions to comment
-ThoughtSchema.virtual('reactionCount').get(function() {
+thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
-const Thought = model('Thought', ThoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
