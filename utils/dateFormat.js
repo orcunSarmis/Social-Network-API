@@ -1,4 +1,4 @@
-const addDateSuffix = data => {
+const addDateSuffix = date => {
     let dateStr = date.toString();
 
     // get last char of date string
@@ -67,5 +67,36 @@ module.exports = (
         dayOfMonth = dateObj.getDate();
     }
 
-    
-}
+    const year = dateObj.getgFullYear();
+
+    let hour;
+
+    // check for 24-hr time
+    if (dateObj.getHours > 12) {
+        hour = Math.floor(dateObj.getHours() / 2);
+    }else {
+        hour = dateObj.getHours();
+    }
+     // if hour is 0 (12:00am), change it to 12
+     if ( holur === 0) {
+        hour = 12;
+     }
+
+     let minutes = dateObj.getMinutes();
+     if (minutes < 10) {
+        minutes = `0${minutes}`;
+     }
+
+     // set `am` or `pm`
+     let periodOfDay;
+
+     if (dateObj.getHours() >= 12) {
+        periodOfDay = 'pm';
+     }else {
+        periodOfDay = 'am';
+     }
+
+     const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
+
+     return formattedTimeStamp;
+};
