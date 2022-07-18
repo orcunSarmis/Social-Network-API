@@ -55,8 +55,7 @@ const thoughtController = {
             res.json(err)
         })
     },
-
-    
+  
 }
 
 module.exports = thoughtController;
