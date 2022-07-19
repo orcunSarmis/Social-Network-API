@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(require('./routes'));
 
 // set up Mongoosewhen app starts, mondoDB find and connect to the DB if exists or create one
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-network', {
-    useFindAndModify: false,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/social-network', {
+
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
