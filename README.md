@@ -17,24 +17,21 @@
 
   ## Usage
 
-  
+  In the command line, `run npm` start to initiate server. NOTE: This repository consists of only the backend. The routes are located in the `routes/api` folder and can be tested with API test clients such as Insomnia Core or Postman.
+  To demonstrate how to use the full scope of this applications capabilities, I have recorded a video going through each group of routes using Insomnia.
 
   ## Contributing
 
-  
+  Ideas to improve this application are welcome, [email](yorcunsarmis@gmail.com) me please.
 
   ## Installation
 
-  To install necessary dependencies, run the following command:
-  ```
-  
-  ```
+  To install the application yourself, fork the project, run `npm i` then run `npm start` in the command line.
+
   ## Tests
 
-  To run tests, run the following command:
-  ```
-  This project not required tets.
-  ```
+  Video demo of endpoint tests
+
   ## License
 
    This project is licensed under the [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/) license. 
