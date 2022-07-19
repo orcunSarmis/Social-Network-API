@@ -1,7 +1,7 @@
 // Import User model
 const { User, Thought } = require('../models');
 
-
+ // get all users
 const userController ={
 getAllUsers(req, res) {
     User.find({})

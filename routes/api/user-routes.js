@@ -15,3 +15,18 @@ router
 .route('/')
 .get(getAllUsers)
 .post(createUser);
+
+// GET one user, PUT, and DELETE - /api/users/:id
+router
+    .route('/:id')
+    .get(getUserById)
+    .put(updateUser)
+    .delete(deleteUser)
+
+// friend routes POST and DELETE - /api/users/:userId/friends/:friendId
+router
+    .route('/:userId/friends/:friendId')
+    .post(addFriend)
+    .delete(deleteFriend)
+
+module.exports = router;
