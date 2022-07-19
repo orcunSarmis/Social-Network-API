@@ -67,7 +67,7 @@ module.exports = (
         dayOfMonth = dateObj.getDate();
     }
 
-    const year = dateObj.getgFullYear();
+    const year = dateObj.getFullYear();
 
     let hour;
 
@@ -78,7 +78,7 @@ module.exports = (
         hour = dateObj.getHours();
     }
      // if hour is 0 (12:00am), change it to 12
-     if ( holur === 0) {
+     if ( hour === 0) {
         hour = 12;
      }
 
