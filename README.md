@@ -26,7 +26,7 @@
 
   ## Installation
 
-  To install the application yourself, fork the project, run `npm i` then run `npm start` in the command line.
+  To install the application yourself, fork the project from [GitHub](https://github.com/orcunSarmis/Social-Network-API), run `npm i` then run `npm start` in the command line.
 
   ## Tests
 
@@ -38,4 +38,4 @@
 
   ## Questions
 
-  If you have any questions about the repo, open an issue or contact me directly at . You can find more of my work at [orcunSarmis](https://github.com/orcunSarmis/).
+  If you have any questions about the repo, open an issue or contact me directly at yorcunsarmis@gmail.com. You can find more of my work at [orcunSarmis](https://github.com/orcunSarmis/).
