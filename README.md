@@ -19,6 +19,16 @@
 
   In the command line, `run npm` start to initiate server. NOTE: This repository consists of only the backend. The routes are located in the `routes/api` folder and can be tested with API test clients such as Insomnia Core or Postman.
   To demonstrate how to use the full scope of this applications capabilities, I have recorded a video going through each group of routes using Insomnia.
+  
+  The API uses the following endpoints:
+  
+  - /api/users - To add a new user, find all users
+  - /api/users/:id - To find one user byv id, delete a user, update a user
+  - /api/users/:userId/friends/:friendId - To add a friend to a user, or to delete a friend
+  - /api/thoughts - Add a new thought, find all thoughts
+  - /api/thoughts/:id - Find one thought, update thought, delete thought
+  - /api/thoughts/:thoughtId/reactions - post a new reaction to a thought
+  - /api/thoughts/:thoughtId/reactions/:reactionId - delete a reaction
 
   ## Contributing
 
