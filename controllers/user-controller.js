@@ -97,7 +97,7 @@ deleteFriend({ params }, res) {
     User.findOneAndUpdate(
         { _id: params.userId },
          // Here, using the MongoDB $pull operator to remove the specific friend from the friends
-        { $pull: { friends: params.firendId }},
+        { $pull: { friends: params.friendId }},
         { new: true }
     )
     .then(dbUserData => {
