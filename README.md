@@ -37,6 +37,8 @@
   In the command line, `run npm` start to initiate server. NOTE: This repository consists of only the backend. The routes are located in the `routes/api` folder and     can be tested with API test clients such as Insomnia Core or Postman.
   To demonstrate how to use the full scope of this applications capabilities, I have recorded a video going through each group of routes using Insomnia.
   
+  [Walkthrough video](https://drive.google.com/file/d/10w572HCV3dOkXqGIqvC_sOITDqDYdZ8-/view?usp=sharing)
+  
   The API uses the following endpoints:
   
   - /api/users - To add a new user, find all users
