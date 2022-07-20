@@ -17,7 +17,7 @@ const thoughtController = {
     // get a thought by id
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
-        .select(-__v)
+        .select('-__v')
         .then(dbThoughtData => {
             if(!dbThoughtData) {
                 res.status(404).json({ message: 'No thought found' });
@@ -85,12 +85,13 @@ const thoughtController = {
 
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
-          { _id: params.id },
+          { _id: params.thoughtId },
           // use $addToSet to block duplicates instead of $push
           { $push: {reactions: body } },
           { new: true }
         )
           .then(dbThoughtData => {
+            console.log(dbThoughtData);
             if (!dbThoughtData) {
               res.status(404).json({ message: 'No thought found with this id!' });
               return;
@@ -102,7 +103,7 @@ const thoughtController = {
 
     deleteReaction({ params }, res) {
         Thought.findOneAndUpdate(
-            { _id: params.id },
+            { _id: params.thoughtId },
             { $pull: { reactions: {reactionId: params.reactionId } } },
             { new: true }
             )
